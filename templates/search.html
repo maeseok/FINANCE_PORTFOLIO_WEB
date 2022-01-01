@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Finance inquiry</title>
-        <style>
-          body {
-            background-image: url("https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-          }
-        </style>
-    </head>
-    <body>
-      <h1>종목 검색</h1>
-        <fieldset>
-          <legend>종목 입력</legend>
-            <form action="/today_rate" method="get"><input placeholder='EX)카카오'
-            required name="stock_item"/>
-            <button>검색</button>
-        </fieldset>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance inquiry</title>
+    <style>
+      body {
+        background-image: url("https://raw.githubusercontent.com/maeseok/finance_web/main/mong.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>종목 검색</h1>
+    <fieldset>
+      <legend>종목 입력</legend>
+      <form action="/today_rate" method="get">
+        <input placeholder="EX)카카오" required name="stock_item" />
+        <button>검색</button>
+        <input type="button" value="홈으로" onclick="location.href='/'" />
+      </form>
+    </fieldset>
+  </body>
 </html>

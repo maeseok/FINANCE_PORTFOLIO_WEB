@@ -7,7 +7,6 @@ from basic import db_connect,only_code_made, time_format
 from inquiry import stock_inquiry, rate_import
 import portfolio as p
 
-#페이지 버튼들 수정해야함
 #컨 R 누르면 매수 계속되는거 고쳐야함...
 #로그인도 나중에 구현하여 사용자마다 DB가지게 해야함
 COSPI,KOSDAQ = db_connect()
@@ -136,6 +135,7 @@ def portfolio_inquiry():
     get_presentrate = []
     get_presentprofit = []
     Buyremain=[]
+    sell_already=[]
     ptotal=[]
     ltotal=[]
     last_total=0
@@ -156,13 +156,17 @@ def portfolio_inquiry():
                 if(len(Sellinfor) != 0):
                     for s in range(0,len(Sellinfor)):
                         if(Buyinfor[j] == Sellinfor[s]):
-                            #해당 종목의 매도량을 저장함
-                            stocknumber = p.stock_item_open(Buyitem[i])
-                            #현재 남은 수량을 저장함
-                            Buyremain = int(Buyinfor[j+2]) - stocknumber
-                            #리스트에 최신화(리스트를 이용하여 출력할 것이기 때문이다.)
-                            Buyinfor[j+2] = Buyremain 
-                            #코드만 불러옴 
+                            if(Sellinfor[s] not in sell_already):
+                                #해당 종목의 매도량을 저장함
+                                stocknumber = p.stock_item_open(Buyitem[i])
+                                #현재 남은 수량을 저장함
+                                Buyremain = int(Buyinfor[j+2]) - stocknumber
+                                #리스트에 최신화(리스트를 이용하여 출력할 것이기 때문이다.)
+                                Buyinfor[j+2] = Buyremain
+                                sell_already.append(Sellinfor[s])
+                                #코드만 불러옴
+                            else:
+                                pass
                         else:
                             Buyremain = Buyinfor[j+2]
                 else:

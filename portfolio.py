@@ -132,9 +132,9 @@ def profit_and_loss(item, saveprice, sellprice, remainprice, remainnumber):
         PLreturn = item+"\n"+buy+"\n"+sell+"\n"+sellnumber+"\n"+profits+"\n"+realprofits
         PLpath= "/nomad_coders/python_scrapper/CODE/DB/PROFIT.txt"
         file = open(PLpath, 'a')
-        file.write("========================================================\n")
         file.write(PLreturn.strip())
         file.write("\n")
+        file.write("========================================================\n")
         file.close()
     except:
         print("알림 : <손익 계산 중 오류가 발생했습니다.>")
