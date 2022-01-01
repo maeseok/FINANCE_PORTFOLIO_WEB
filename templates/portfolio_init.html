@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance inquiry</title>
+    <style>
+      body {
+        background-image: url("https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <header id="main-header">
+        <h1>포트폴리오 초기화</h1>
+      </header>
+      <nav id="main-navigation"></nav>
+      <hr />
+      <div id="content">
+        <section id="main-section">
+          <article>
+            <h1>포트폴리오를 초기화하려면 "초기화"라고 입력해주세요</h1>
+            <form action="/portfolio_init_return" method="get">
+              <fieldset>
+                <legend>초기화</legend>
+                <label for="input">입력</label>
+                <input type="text" name="initialize" />
+                <br />
+                <input type="submit" value="확인" />
+                <input
+                  type="submit"
+                  value="홈으로"
+                  onclick="location.href='/'"
+                />
+              </fieldset>
+            </form>
+          </article>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance inquiry</title>
+    <style>
+      body {
+        background-image: url("https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>조회 결과</h1>
+    <h3>종목 : {{searchingBy}}</h3>
+    <section id="rate-section">
+      <article>
+        <hr />
+        <div id="content">
+          <fieldset>
+            <legend><b>결과</b></legend>
+            {% for i in range(0,5) %}
+            <b><span>{{stockRate[i]}}</span></b>
+            <br />
+            {%endfor%}
+          </fieldset>
+        </div>
+        <hr />
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!required는 폼 데이터(form data)가 서버로 제출되기 전 반드시 채워져 있어야 하는 입력 필드를 명시함!>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance inquiry</title>
+    <style>
+      body {
+        background-image: url("https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>정보 입력</h1>
+    <form action="/stock_return" method="get">
+      <fieldset>
+        <legend>입력 양식</legend>
+        <label for="stockName">종목 이름</label>
+        <input placeholder="EX)삼성전자" required name="stocks" />
+        <br />
+        <label for="purdate">매수 날짜</label>
+        <input placeholder="EX)2021.11.03" required name="purchase_date" />
+        <br />
+        <label for="saledate">매도 날짜</label>
+        <input placeholder="EX)2021.12.23" required name="sale_date" />
+        <br />
+        <button>완료</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

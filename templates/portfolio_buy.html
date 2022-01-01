@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance inquiry</title>
+    <style>
+      body {
+        background-image: url("https://images.mypetlife.co.kr/content/uploads/2019/12/09151959/%EC%8B%AC%EC%8B%AC%ED%95%9C_%EA%B3%A0%EC%96%91%EC%9D%B42.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <header id="main-header">
+        <h1>매수 정보</h1>
+      </header>
+      <nav id="main-navigation"></nav>
+      <hr />
+      <div id="content">
+        <section id="main-section">
+          <article>
+            <h1>정보 입력</h1>
+            <form action="/portfolio_buy_return" method="get">
+              <fieldset>
+                <legend>입력 양식</legend>
+                <label for="name">종목 이름</label>
+                <input placeholder="EX)삼성전자" required name="name" />
+                <br />
+                <label for="price">매수 가격</label>
+                <input placeholder="EX)75200" required name="price" />
+                <br />
+                <label for="number">매수 수량</label>
+                <input placeholder="EX)3" required name="number" />
+                <br />
+                <input type="submit" value="매수" />
+                <input type="reset" value="입력 초기화" />
+                <input
+                  type="submit"
+                  value="홈으로"
+                  onclick="location.href='/'"
+                />
+              </fieldset>
+            </form>
+          </article>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
