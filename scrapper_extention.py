@@ -13,6 +13,25 @@ COSPI,KOSDAQ = db_connect()
 nowDATE = time_format()
 app = Flask("Finance Portfolio")
 
+
+#로그인 구현
+@app.route('/login_confirm', methods=['POST'])
+def login_confirm():
+    id_ = request.form['id_']
+    pw_ = request.form['pw_']
+    if (id_ == 'admin' and pw_ == 'admin') or (id_ == 'user' and pw_ == 'user'):
+        session['id'] = id_
+        return redirect(url_for('index'))
+    else:
+        return redirect(url_for('login'))
+
+
+
+
+
+
+
+
 #대표 화면
 @app.route("/")
 def home():
